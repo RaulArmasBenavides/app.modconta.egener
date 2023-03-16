@@ -484,8 +484,8 @@ public class PedidoView extends javax.swing.JInternalFrame
 
     private void btnExportarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarPDFActionPerformed
    try{           
-    String x = this.txtfolio.getText().trim();
-   //creamos un objeto dbBean
+              String x = this.txtfolio.getText().trim();
+             //creamos un objeto dbBean
               dbBean aux = new dbBean();
              HashMap map = new HashMap();
             // Connection cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ST;user=sa;password=sasasa;");

@@ -84,7 +84,7 @@ from aud_audit_modif]]>
 			</staticText>
 			<image>
 				<reportElement x="0" y="0" width="162" height="41" uuid="6a5f6d4d-991e-4971-b32c-ded2a606f0ca"/>
-				<imageExpression><![CDATA["C:\\Users\\RAUL\\Documents\\rmab\\JAVA\\app.modconta.egener\\src\\app\\modconta\\wallpapers\\egener-logo.png"]]></imageExpression>
+				<imageExpression><![CDATA["C:\\Users\\RAUL\\Documents\\rmab\\java1\\app.modconta.egener\\src\\app\\modconta\\wallpapers\\egener-logo.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

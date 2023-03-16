@@ -224,7 +224,7 @@ public class ConsultasView extends javax.swing.JInternalFrame {
                 JasperReport jr= JasperCompileManager.compileReport("src/app/modconta/reports/ReporteAuditoria.jrxml");
               //JasperReport jr= JasperCompileManager.compileReport(jasdi);
              // map.put("idCliente",idClie); 
-              JasperPrint  jp = JasperFillManager.fillReport(jr,null,cn);
+              JasperPrint  jp = JasperFillManager.fillReport(jr,map,cn);
             // JasperPrint jp= JasperFillManager.fillReport(jr,idClie,cn);
               
               JasperViewer jv= new JasperViewer(jp,false);

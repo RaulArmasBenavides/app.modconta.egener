@@ -2,34 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/databaase/Helper.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/databaase/db.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/Login.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/ProtocoloCampoView.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/IMAGES/user_blue_32.png</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/databaase/util.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/CotizacionView.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/MODEL/ClienteDAO.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/wallpapers/RESETPERU.jpg</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/ServicioView.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/ConforServicioView.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/entity/Cliente.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/IMAGES/user_business_close_32.png</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/business/Negocios.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/EquipoView.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/IMAGES/tick.png</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/VentaView.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/MDIApplication.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/PedidoView.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/databaase/dbBean.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/entity/Constantes.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/CompraView.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/dataaccess/Datos.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/ClienteView.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/EmpleadoView.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/MODEL/AdministradorDAO.java</file>
-            <file>file:/C:/Users/RAUL/Desktop/app.modconta.egener/src/app/modconta/view/ConsultasView.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

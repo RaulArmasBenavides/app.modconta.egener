@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportePedido" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d2cf49b-42b6-4a85-b837-ea8f6769fdcb">
 	<property name="ireport.zoom" value="1.1000000000000005"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="23"/>
+	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
@@ -84,7 +84,7 @@
 	<parameter name="folio" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select  p.folio,c.nombre ,c .RUC,c.direccion, d.can_horas,d.plantel,d.observaciones from pedido p , detalle_pedido d , clientes c  where p.id_pedido = d.id_pedido and p.estado ='S'
-and p.idcliente = c.idcliente and p.folio = $P{folio};]]>
+and p.idempcliente = c.idcliente and p.folio = $P{folio};]]>
 	</queryString>
 	<field name="folio" class="java.lang.String"/>
 	<field name="nombre" class="java.lang.String"/>
@@ -106,10 +106,6 @@ and p.idcliente = c.idcliente and p.folio = $P{folio};]]>
 				</textElement>
 				<text><![CDATA[Pedido]]></text>
 			</staticText>
-			<image>
-				<reportElement x="23" y="14" width="273" height="40" uuid="f3a9efab-9363-44a5-b69c-a86df2689e84"/>
-				<imageExpression><![CDATA["C:\\Users\\RAUL\\Documents\\rmab\\JAVA\\app.modconta.egener\\src\\app\\modconta\\wallpapers\\egener-logo.png"]]></imageExpression>
-			</image>
 			<textField>
 				<reportElement x="594" y="34" width="100" height="20" uuid="2e6a2c29-872a-40d5-9633-18a57dbe5b39"/>
 				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
