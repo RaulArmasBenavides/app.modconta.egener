@@ -178,7 +178,7 @@ public class util {
         }
 
  public ResultSet consultar(String sql) { 
-      dbBean cons = new dbBean();
+        dbBean cons = new dbBean();
         ResultSet resultado = null; 
         try { 
             Statement sentencia; 
@@ -187,7 +187,8 @@ public class util {
         } catch (SQLException e) { 
             e.printStackTrace(); 
             return null; 
-        }        return resultado; 
+        }        
+        return resultado; 
     } 
 }
 

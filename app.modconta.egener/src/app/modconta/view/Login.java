@@ -7,8 +7,10 @@ package app.modconta.view;
 
 import app.modconta.databaase.dbBean;
 import app.modconta.databaase.util;
+import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -242,39 +244,27 @@ public class Login extends javax.swing.JFrame {
  private void Identificar(String usuario, String password) {
        
    try { 
-            //conectividad a la BD
-            dbBean cc = new dbBean();
             util u = new util();
-            cc.getConnection();
-            //creamos un string para la query 
-          //  String consul = " select 1 from usua       rios  where usuario='"+ usuario + "'  and CONVERT(VARCHAR(MAX), DECRYPTBYPASSPHRASE('clave', clave)) = '" + password + "'";
- String consul = " select 1 from usuarios  where usuario='"+ usuario + "'  and clave = '" + password + "'";            
-//ejecutando la consulta
+            //String consul = " select 1 from usua       rios  where usuario='"+ usuario + "'  and CONVERT(VARCHAR(MAX), DECRYPTBYPASSPHRASE('clave', clave)) = '" + password + "'";
+            String consul = " select 1 from usuarios where usuario='"+ usuario +"'  and clave = '" + password + "'";            
             ResultSet rr=u.consultar(consul);
-            //validar
             if(rr.next())
             {
                 //Instanciar la clase
                 MDIApplication menu = new MDIApplication();
-                //en caso sea verdad mosyramo un aviso de susario valido
-                //JOptionPane.showMessageDialog(null, "Usuario Valido");
-                //llamar al formulario principal
                 this.hide();
                 menu.show(); // se muestra el menu 
-                JOptionPane.showMessageDialog(null, "Bienvenid@ " + usuario);
-               
-            }// fin de if
-//            else
-//            {//principio de elfe
-//                JOptionPane.showMessageDialog(null, "Usuario No Valido");   
-//            }//fin de else
-            
-        } //fin de try
-        catch (Exception e) 
+               // JOptionPane.showMessageDialog(null, "Bienvenid@ " + usuario);
+            }
+           else
+            {
+               JOptionPane.showMessageDialog(null, "Usuario o Password No Valido");   
+            }
+        } 
+        catch (HeadlessException | SQLException e) 
         { 
-            JOptionPane.showMessageDialog(null,"Ocurrio un error " + e.getMessage());             
-        }//fin de catch}
-            return ;
+            JOptionPane.showMessageDialog(null,"Ocurrió un error " + e.getMessage());             
+        }
     }
  
  

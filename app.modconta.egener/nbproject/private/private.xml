@@ -3,11 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/ClienteView.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/entity/Cliente.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/dataaccess/Repository.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/FrmClienteView.java</file>
             <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/CotizacionView.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/databaase/db.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/dataaccess/MovimientosDo.java</file>
             <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/MDIApplication.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/ClienteView.java</file>
             <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/Login.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/MODEL/ClienteDAO.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/databaase/dbBean.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/EquipoView.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/entity/Pedido.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/FrmCliente.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/PedidoView.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/databaase/util.java</file>
             <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/ConforServicioView.java</file>
+            <file>file:/C:/Users/RAUL/Documents/rmab/Java/app.modconta.egener/app.modconta.egener/src/app/modconta/view/ConsultasView.java</file>
         </group>
     </open-files>
 </project-private>

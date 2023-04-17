@@ -6,6 +6,7 @@
 package app.modconta.dataaccess;
 
 
+import app.modconta.entity.Movimiento;
 import app.modconta.databaase.db;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,7 +25,7 @@ public class MovimientosDo {
     private final db con;
     public MovimientosDo ()
     { 
-    this.con = new db();
+      this.con = new db();
     }
     
     
@@ -74,7 +75,7 @@ public class MovimientosDo {
       //Movimiento mov = null;
       String Sxmt = "";
   //"insert into movimientos values ('"+ mov.getDescripcion() +"','" + mov.getMoneda() +"','"+ mov.getUser() + "',GETDATE()," + mov.getFactorConv().toString() +"," + mov.getMonto().toString()+")";
-      Connection cn = con.getConnection();
+      Connection cn = db.getConnection();
       if(cn != null) 
      { 
         try 

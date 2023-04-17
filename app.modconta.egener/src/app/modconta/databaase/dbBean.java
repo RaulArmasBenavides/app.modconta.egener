@@ -10,55 +10,30 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class dbBean {
-    
     String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=dblogistica;integratedSecurity=false";
     String dbDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver" ;
     private Connection dbCon;
     private String Login=Constantes.user_sa;
     private String password=Constantes.clave_sa;
 
-  public dbBean(){
-       
-      connect();
-       }
  
-  
   public Connection getConnection()
-    {
+   {
       Connection cn= null;
         try {
             Class.forName(dbDriver);
-           // cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=dblogistica;user=sa;password=sasasa;");
-           cn = DriverManager.getConnection(Constantes.CADENA_CONEXION);
+           //cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=dblogistica;user=sa;password=sasasa;");
+             cn = DriverManager.getConnection(Constantes.CADENA_CONEXION);
+            //cn = DriverManager.getConnection(this.dbURL,this.Login,this.password);
            } catch (Exception e) {
             System.out.println(e);
            }
         return cn;
     }
   
-  
-  public boolean connect() {
-      
-        try {
-            Class.forName(this.dbDriver);
-        } catch(java.lang.ClassNotFoundException e) {
-            System.out.println("Error en class");
-            return false;
-        }
-        try {
-            dbCon = DriverManager.getConnection(this.dbURL,this.Login,this.password);
-
-        } catch(SQLException ex) {
-            System.out.println("No se puede conectar al servidor" + ex);
-            return false;
-        }
-        return true;
-     }
-
-
   public void close() throws SQLException{
         dbCon.close();
-       }
+  }
 
   public ResultSet execSQL(String sql) throws SQLException{
                     Statement s = dbCon.createStatement();
@@ -72,20 +47,20 @@ public class dbBean {
                    return (r == 0) ? 0 : r;
                 }
 
- public boolean procedureSQL(String sql) throws SQLException{
+  public boolean procedureSQL(String sql) throws SQLException{
                    Statement s = dbCon.createStatement();
                    boolean r = s.execute(sql);
                    return r;
                 }
 
-public void commit() throws SQLException{
+  public void commit() throws SQLException{
         dbCon.commit();
              }
 
-public void rollback() throws SQLException{
+  public void rollback() throws SQLException{
         dbCon.rollback();
              }
-public void AutoCommit(boolean estado) throws SQLException{
+  public void AutoCommit(boolean estado) throws SQLException{
         dbCon.setAutoCommit(estado);
              }
     

@@ -230,7 +230,7 @@ public class MDIApplication extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-        cargarFormulario(ClienteView.class);
+        cargarFormulario(FrmCliente.class);
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquiposActionPerformed
@@ -334,8 +334,9 @@ public class MDIApplication extends javax.swing.JFrame {
               view.setVisible(true);   
             }
             //Activar el formulario 
-            view.setSelected(true);
+        view.setSelected(true);
         } catch (Exception e) {
+            System.out.println("Ocurrió un error al abrir el formulario" + e.getMessage());
         }
     }
 

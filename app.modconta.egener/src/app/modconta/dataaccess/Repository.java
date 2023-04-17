@@ -30,10 +30,9 @@ import javax.swing.DefaultComboBoxModel;
  *
  * @author RAUL
  */
-public class Datos {
+public class Repository {
 
     //Métodos genéricos INICIO 
-    
     
    //función genérica para listar combo
     public DefaultComboBoxModel getvaluesName(String campoNombre, String NombreTabla)

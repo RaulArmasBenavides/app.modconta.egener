@@ -10,8 +10,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class ClienteDAO {
+    
  public Vector<Cliente> ListaItem(boolean sw, String str) {
-        Vector<Cliente> item = new Vector<Cliente>();
+        Vector<Cliente> ClientesCollection = new Vector<Cliente>();
         dbBean con = new dbBean();
        /* String sql = "Select * from Cliente";
         //El criterio de busqueda para mostrar datos 
@@ -21,12 +22,11 @@ public class ClienteDAO {
         }*/
       PreparedStatement pe = null;
      try {
-         pe = con.getConnection().prepareCall("call usp_comprador_listar_all");
+         pe = con.getConnection().prepareCall("usp_clientes_listar");
      } catch (SQLException ex) {
          Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
      }
-       
-        try{
+      try{
             ResultSet resultado = pe.executeQuery();
             while(resultado.next()){
                 Cliente clien;
@@ -39,21 +39,16 @@ public class ClienteDAO {
                 clien.setSexo(resultado.getString(6));
                 clien.setDNI(resultado.getString(7));
                 clien.setRUC(resultado.getString(8));
-                item.addElement(clien);     
+                ClientesCollection.addElement(clien);     
             }
             
         }catch(java.sql.SQLException e){
             e.printStackTrace();
         }
-        try{
-            con.close();
-        }catch(java.sql.SQLException e){
-            e.printStackTrace();
-        }
-        return item; 
+     //con.close();
+        return ClientesCollection; 
     }
   
- 
  public int procesaItem(Cliente p, String proc){
         int resultado = 0;
         String sql = "";

@@ -143,6 +143,7 @@ public class PedidoView extends javax.swing.JInternalFrame
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setResizable(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("REGISTRO DE PEDIDOS");
@@ -166,7 +167,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(comboGrupos);
-        comboGrupos.setBounds(80, 140, 90, 22);
+        comboGrupos.setBounds(80, 140, 90, 29);
 
         tbGrupos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -186,7 +187,7 @@ public class PedidoView extends javax.swing.JInternalFrame
         jPanel4.add(jScrollPane4);
         jScrollPane4.setBounds(30, 220, 590, 200);
         jPanel4.add(txtPlantel);
-        txtPlantel.setBounds(440, 140, 90, 22);
+        txtPlantel.setBounds(440, 140, 90, 29);
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/agregar.png"))); // NOI18N
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +196,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnAgregar);
-        btnAgregar.setBounds(540, 100, 35, 33);
+        btnAgregar.setBounds(540, 100, 35, 32);
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/update.png"))); // NOI18N
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -204,7 +205,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnModificar);
-        btnModificar.setBounds(540, 140, 35, 33);
+        btnModificar.setBounds(540, 140, 35, 32);
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/eliminar.png"))); // NOI18N
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -222,11 +223,11 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnLimpiar);
-        btnLimpiar.setBounds(500, 50, 120, 25);
+        btnLimpiar.setBounds(500, 50, 120, 29);
 
         jLabel9.setText("Grupo");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(30, 140, 50, 16);
+        jLabel9.setBounds(30, 140, 50, 21);
 
         jLabel3.setText("Plantel");
         jPanel4.add(jLabel3);
@@ -234,13 +235,13 @@ public class PedidoView extends javax.swing.JInternalFrame
 
         spincant.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10000, 1));
         jPanel4.add(spincant);
-        spincant.setBounds(440, 170, 89, 22);
+        spincant.setBounds(440, 170, 123, 29);
 
         jLabel4.setText("Horas");
         jPanel4.add(jLabel4);
         jLabel4.setBounds(380, 170, 50, 20);
         jPanel4.add(txtRucCliente);
-        txtRucCliente.setBounds(220, 50, 140, 22);
+        txtRucCliente.setBounds(220, 50, 140, 29);
 
         jLabel10.setText("Cliente");
         jPanel4.add(jLabel10);
@@ -253,19 +254,19 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(comboClientes);
-        comboClientes.setBounds(80, 50, 130, 22);
+        comboClientes.setBounds(80, 50, 130, 29);
 
         jLabel2.setText("Folio");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(30, 20, 27, 16);
+        jLabel2.setBounds(30, 20, 33, 21);
         jPanel4.add(txtfolio);
-        txtfolio.setBounds(80, 20, 130, 22);
+        txtfolio.setBounds(80, 20, 130, 29);
         jPanel4.add(txtobservaciondetalle);
-        txtobservaciondetalle.setBounds(120, 170, 230, 22);
+        txtobservaciondetalle.setBounds(120, 170, 230, 29);
 
         lblObservacion.setText("Observación");
         jPanel4.add(lblObservacion);
-        lblObservacion.setBounds(30, 170, 70, 16);
+        lblObservacion.setBounds(30, 170, 82, 21);
 
         btnLeer.setText("Leer");
         btnLeer.addActionListener(new java.awt.event.ActionListener() {
@@ -274,7 +275,7 @@ public class PedidoView extends javax.swing.JInternalFrame
             }
         });
         jPanel4.add(btnLeer);
-        btnLeer.setBounds(500, 20, 120, 25);
+        btnLeer.setBounds(500, 20, 120, 29);
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {

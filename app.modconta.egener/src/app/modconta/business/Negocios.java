@@ -5,7 +5,7 @@
  */
 package app.modconta.business;
 
-import app.modconta.dataaccess.Datos;
+import app.modconta.dataaccess.Repository;
 import app.modconta.dataaccess.MovimientosDo;
 import app.modconta.databaase.dbBean;
 import app.modconta.entity.ConformidadServicio;
@@ -30,12 +30,12 @@ import javax.swing.DefaultComboBoxModel;
  */
 public class Negocios {
  
-    Datos _doDatos = null;
+    Repository _doDatos = null;
     public boolean registrarItemConformidaddetse;
     
     public Negocios()
     {
-        _doDatos = new Datos();
+        _doDatos = new Repository();
     }
     
     

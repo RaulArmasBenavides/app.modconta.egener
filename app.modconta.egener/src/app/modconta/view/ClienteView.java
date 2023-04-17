@@ -20,36 +20,34 @@ import net.sf.jasperreports.view.JasperViewer;
  * @author MARCELO
  */
 public class ClienteView extends javax.swing.JInternalFrame {
-    //variables  
     ClienteDAO ClienteDAO;
-    DefaultTableModel dtm;
+    DefaultTableModel _DefaultTableModel;
     boolean sw = false;
     String cad = "";
     int idClie; 
     
     public ClienteView() {
-        
-        ClienteDAO = new ClienteDAO();
         initComponents(); 
-        dtm = (DefaultTableModel)tblCliente.getModel();
+        ClienteDAO = new ClienteDAO();
+        _DefaultTableModel = (DefaultTableModel)tblCliente.getModel();
         llenaTabla(false, "");
     }  
    
     public void llenaTabla(boolean swr, String cadr)
     {
-        Vector<Cliente> persot = ClienteDAO.ListaItem(swr, cadr);
-        int i = persot.size(); 
+        Vector<Cliente> ClientesCollection = ClienteDAO.ListaItem(swr, cadr);
+        int i = ClientesCollection.size(); 
         for(int j = 0; j<i;j++){
             Vector vect = new Vector();
-            vect.addElement(persot.get(j).getIdCliente());
-            vect.addElement(persot.get(j).getNombre());
-            vect.addElement(persot.get(j).getApellidos());
-            vect.addElement(persot.get(j).getTelefono());
-            vect.addElement(persot.get(j).getDireccion());
-            vect.addElement(persot.get(j).getSexo());
-            vect.addElement(persot.get(j).getDNI());
-            vect.addElement(persot.get(j).getRUC());
-            dtm.addRow(vect);
+            vect.addElement(ClientesCollection.get(j).getIdCliente());
+            vect.addElement(ClientesCollection.get(j).getNombre());
+            vect.addElement(ClientesCollection.get(j).getApellidos());
+            vect.addElement(ClientesCollection.get(j).getTelefono());
+            vect.addElement(ClientesCollection.get(j).getDireccion());
+            vect.addElement(ClientesCollection.get(j).getSexo());
+            vect.addElement(ClientesCollection.get(j).getDNI());
+            vect.addElement(ClientesCollection.get(j).getRUC());
+            _DefaultTableModel.addRow(vect);
         }
         
     } 
@@ -99,6 +97,7 @@ public class ClienteView extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("::CLIENTE_FRM::");
         setAutoscrolls(true);
+        setVisible(true);
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -114,11 +113,11 @@ public class ClienteView extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Nombre");
         jPanel4.add(jLabel3);
-        jLabel3.setBounds(50, 20, 60, 16);
+        jLabel3.setBounds(50, 20, 60, 21);
 
         jLabel4.setText("Apellidos");
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(50, 60, 70, 16);
+        jLabel4.setBounds(50, 60, 70, 21);
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,7 +169,7 @@ public class ClienteView extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Telefono");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(50, 190, 50, 16);
+        jLabel6.setBounds(50, 190, 50, 21);
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -206,7 +205,7 @@ public class ClienteView extends javax.swing.JInternalFrame {
 
         jLabel7.setText("RUC");
         jPanel4.add(jLabel7);
-        jLabel7.setBounds(60, 270, 30, 16);
+        jLabel7.setBounds(60, 270, 30, 21);
 
         jLabel1.setText("Dirección");
         jPanel4.add(jLabel1);
@@ -253,7 +252,7 @@ public class ClienteView extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Sexo");
         jPanel4.add(jLabel8);
-        jLabel8.setBounds(60, 100, 40, 16);
+        jLabel8.setBounds(60, 100, 40, 21);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.gif"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -262,7 +261,7 @@ public class ClienteView extends javax.swing.JInternalFrame {
             }
         });
         jPanel4.add(jButton2);
-        jButton2.setBounds(460, 10, 60, 33);
+        jButton2.setBounds(460, 10, 60, 32);
 
         jTabbedPane1.addTab("Registrar", jPanel4);
 
@@ -357,6 +356,8 @@ public class ClienteView extends javax.swing.JInternalFrame {
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
+
+        getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -25,7 +25,7 @@ public class FactorDo {
     private final db con;
     public FactorDo ()
     { 
-    this.con = new db();
+      this.con = new db();
     }
     //Mètodo que busca el tipo de cambio a dòlares de hoy 
     //retorna el tipo de cambio

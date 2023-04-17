@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.modconta.dataaccess;
+package app.modconta.entity;
 
 /**
  *
  * @author RAUL
  */
-class Movimiento {
+public class Movimiento {
     
 }
