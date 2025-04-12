@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="app.modconta.egener">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/app.modconta.egener.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

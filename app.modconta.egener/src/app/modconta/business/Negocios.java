@@ -21,7 +21,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import javax.jws.WebParam;
 import javax.swing.DefaultComboBoxModel;
 
 /**

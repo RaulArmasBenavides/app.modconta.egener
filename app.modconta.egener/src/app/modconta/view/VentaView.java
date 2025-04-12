@@ -14,14 +14,13 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
-import jdk.nashorn.internal.scripts.JS;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
-
+import javax.swing.*;
 public class VentaView extends javax.swing.JInternalFrame {
     EquipoDAO eqx = new EquipoDAO();
     VentaDAO vendao = new VentaDAO();
@@ -47,7 +46,8 @@ public class VentaView extends javax.swing.JInternalFrame {
      
      
     public VentaView() 
-    {   
+    {
+        initComponents();
         util utile = new util();
         initComponents(); 
         idx = utile.idNext("Venta", "idVenta");
