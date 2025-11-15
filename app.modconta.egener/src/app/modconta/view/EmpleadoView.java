@@ -29,7 +29,8 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
     boolean sw = false;
     String cad = "";
     int idEmp; 
-    
+    private static final String ACCION_REGISTRAR  = "Registrar";
+    private static final String ACCION_ACTUALIZAR = "Actualizar";
    
     public EmpleadoView() {
         EmpleadoDAO = new EmpleadoDAO();
@@ -55,7 +56,8 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
             vect.addElement(persot.get(j).getIdEmpleado());
             vect.addElement(persot.get(j).getCodigoContrato());
             vect.addElement(persot.get(j).getNombre());
-            vect.addElement(persot.get(j).getApellidos());
+            vect.addElement(persot.get(j).getApellidoPaterno());
+            vect.addElement(persot.get(j).getApellidoMaterno());
             vect.addElement(persot.get(j).getSexo());
             vect.addElement(persot.get(j).getTelefono());
             vect.addElement(persot.get(j).getDNI());
@@ -72,28 +74,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         sexo = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
-        txtApellidos = new javax.swing.JTextField();
-        btnLimpiar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        btnRegistrar = new javax.swing.JButton();
-        txtDNI = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        txtTelefono = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        txtDireccion = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        rbtnM = new javax.swing.JRadioButton();
-        rbtnF = new javax.swing.JRadioButton();
-        jLabel13 = new javax.swing.JLabel();
-        txtCodigo = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        idint = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         txtSueldo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -117,6 +97,30 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         tblCliente = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         jComboBox3 = new javax.swing.JComboBox<>();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        txtApellidoMaterno = new javax.swing.JTextField();
+        btnLimpiar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        btnRegistrar = new javax.swing.JButton();
+        txtDNI = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtTelefono = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtDireccion = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        rbtnM = new javax.swing.JRadioButton();
+        rbtnF = new javax.swing.JRadioButton();
+        jLabel13 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        idint = new javax.swing.JTextField();
+        txtApellidoPaterno = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -135,150 +139,6 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         });
 
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(32769, 32769));
-
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel4.setLayout(null);
-
-        jLabel3.setText("Nombre");
-        jPanel4.add(jLabel3);
-        jLabel3.setBounds(30, 60, 60, 14);
-
-        jLabel4.setText("Apellidos");
-        jPanel4.add(jLabel4);
-        jLabel4.setBounds(30, 100, 60, 20);
-
-        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNombreKeyPressed(evt);
-            }
-        });
-        jPanel4.add(txtNombre);
-        txtNombre.setBounds(130, 50, 330, 30);
-
-        txtApellidos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidosActionPerformed(evt);
-            }
-        });
-        txtApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtApellidosKeyPressed(evt);
-            }
-        });
-        jPanel4.add(txtApellidos);
-        txtApellidos.setBounds(130, 90, 330, 30);
-
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnLimpiar);
-        btnLimpiar.setBounds(500, 110, 80, 40);
-
-        jLabel6.setText("DNI");
-        jPanel4.add(jLabel6);
-        jLabel6.setBounds(40, 140, 50, 10);
-
-        btnRegistrar.setText("Registrar");
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
-            }
-        });
-        btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnRegistrarKeyPressed(evt);
-            }
-        });
-        jPanel4.add(btnRegistrar);
-        btnRegistrar.setBounds(500, 40, 80, 60);
-
-        txtDNI.setName("txtDireccion"); // NOI18N
-        txtDNI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDNIActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtDNI);
-        txtDNI.setBounds(130, 130, 110, 30);
-
-        jLabel7.setText("Celular");
-        jPanel4.add(jLabel7);
-        jLabel7.setBounds(260, 140, 50, 14);
-
-        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefonoActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtTelefono);
-        txtTelefono.setBounds(330, 130, 130, 30);
-
-        jLabel9.setText("Dirección");
-        jPanel4.add(jLabel9);
-        jLabel9.setBounds(30, 220, 60, 14);
-        jPanel4.add(txtDireccion);
-        txtDireccion.setBounds(130, 210, 330, 30);
-        jPanel4.add(jLabel11);
-        jLabel11.setBounds(0, 0, 0, 0);
-
-        jLabel8.setText("Sexo");
-        jPanel4.add(jLabel8);
-        jLabel8.setBounds(40, 180, 50, 14);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 51, 51)));
-
-        sexo.add(rbtnM);
-        rbtnM.setText("Masculino");
-
-        sexo.add(rbtnF);
-        rbtnF.setText("Femenino");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rbtnM, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addComponent(rbtnF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtnM)
-                    .addComponent(rbtnF))
-                .addGap(0, 5, Short.MAX_VALUE))
-        );
-
-        jPanel4.add(jPanel1);
-        jPanel1.setBounds(130, 170, 330, 30);
-
-        jLabel13.setText("Código");
-        jPanel4.add(jLabel13);
-        jLabel13.setBounds(40, 260, 50, 14);
-        jPanel4.add(txtCodigo);
-        txtCodigo.setBounds(130, 250, 330, 30);
-
-        jLabel16.setText("idEmpleado");
-        jPanel4.add(jLabel16);
-        jLabel16.setBounds(20, 20, 80, 14);
-
-        idint.setEnabled(false);
-        idint.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idintActionPerformed(evt);
-            }
-        });
-        jPanel4.add(idint);
-        idint.setBounds(130, 10, 50, 30);
-
-        jTabbedPane1.addTab("Registrar", jPanel4);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
@@ -382,7 +242,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
                     .addComponent(idint2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxArea, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(227, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -476,6 +336,167 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Búsqueda", jPanel3);
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.setLayout(null);
+
+        jLabel3.setText("Nombre");
+        jPanel4.add(jLabel3);
+        jLabel3.setBounds(30, 60, 60, 16);
+
+        jLabel4.setText("Apellido Materno");
+        jPanel4.add(jLabel4);
+        jLabel4.setBounds(20, 150, 100, 20);
+
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNombreKeyPressed(evt);
+            }
+        });
+        jPanel4.add(txtNombre);
+        txtNombre.setBounds(130, 50, 330, 30);
+
+        txtApellidoMaterno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidoMaternoActionPerformed(evt);
+            }
+        });
+        txtApellidoMaterno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtApellidoMaternoKeyPressed(evt);
+            }
+        });
+        jPanel4.add(txtApellidoMaterno);
+        txtApellidoMaterno.setBounds(130, 140, 330, 30);
+
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnLimpiar);
+        btnLimpiar.setBounds(500, 110, 80, 40);
+
+        jLabel6.setText("DNI");
+        jPanel4.add(jLabel6);
+        jLabel6.setBounds(40, 200, 50, 20);
+
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+        btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnRegistrarKeyPressed(evt);
+            }
+        });
+        jPanel4.add(btnRegistrar);
+        btnRegistrar.setBounds(500, 40, 80, 60);
+
+        txtDNI.setName("txtDireccion"); // NOI18N
+        txtDNI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDNIActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtDNI);
+        txtDNI.setBounds(120, 190, 110, 30);
+
+        jLabel7.setText("Celular");
+        jPanel4.add(jLabel7);
+        jLabel7.setBounds(250, 200, 50, 16);
+
+        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonoActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtTelefono);
+        txtTelefono.setBounds(320, 190, 130, 30);
+
+        jLabel9.setText("Dirección");
+        jPanel4.add(jLabel9);
+        jLabel9.setBounds(30, 290, 60, 16);
+        jPanel4.add(txtDireccion);
+        txtDireccion.setBounds(120, 280, 330, 30);
+        jPanel4.add(jLabel11);
+        jLabel11.setBounds(0, 0, 0, 0);
+
+        jLabel8.setText("Sexo");
+        jPanel4.add(jLabel8);
+        jLabel8.setBounds(30, 250, 50, 16);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 51, 51)));
+
+        sexo.add(rbtnM);
+        rbtnM.setText("Masculino");
+
+        sexo.add(rbtnF);
+        rbtnF.setText("Femenino");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rbtnM, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(rbtnF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtnM)
+                    .addComponent(rbtnF))
+                .addGap(0, 5, Short.MAX_VALUE))
+        );
+
+        jPanel4.add(jPanel1);
+        jPanel1.setBounds(120, 240, 330, 30);
+
+        jLabel13.setText("Código");
+        jPanel4.add(jLabel13);
+        jLabel13.setBounds(40, 330, 50, 16);
+        jPanel4.add(txtCodigo);
+        txtCodigo.setBounds(120, 320, 330, 30);
+
+        jLabel16.setText("idEmpleado");
+        jPanel4.add(jLabel16);
+        jLabel16.setBounds(20, 20, 80, 16);
+
+        idint.setEnabled(false);
+        idint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idintActionPerformed(evt);
+            }
+        });
+        jPanel4.add(idint);
+        idint.setBounds(130, 10, 50, 30);
+
+        txtApellidoPaterno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidoPaternoActionPerformed(evt);
+            }
+        });
+        txtApellidoPaterno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtApellidoPaternoKeyPressed(evt);
+            }
+        });
+        jPanel4.add(txtApellidoPaterno);
+        txtApellidoPaterno.setBounds(130, 90, 330, 30);
+
+        jLabel18.setText("Apellido Paterno");
+        jPanel4.add(jLabel18);
+        jLabel18.setBounds(20, 100, 90, 20);
+
+        jTabbedPane1.addTab("Registrar", jPanel4);
+
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -529,7 +550,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -574,88 +595,65 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnRegistrarKeyPressed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        
-        String proc = this.btnRegistrar.getText();
-        int id = 0, est;
-        String pr = ""; 
-        //el formato de la fecha
-       // DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-      //   SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        // String strDate = DateFormat.getDateInstance().format(date);
-        // Fecha.setText(date);
-        if(valida() == true){
+          if (!valida()) {
+                return;
+            }
+
+            String accionBoton = this.btnRegistrar.getText();
             util u = new util();
-            Empleado p = new Empleado();
-            //Contrato c = new Contrato();
-              //CONTRATO
-           //  c.setCodigo(this.txtCodigoContrato.getText());
-           // c.setArea(this.cbxArea.getSelectedItem().toString());
-           // c.setCargo(this.cbxCargo.getSelectedItem().toString());
-           // c.setFechaInicio(this.dcFechaIncio.getDate().toString());
-           // c.setFechaFinal(this.dcFechaFin.getDate().toString());
-           // c.setSueldo(parseFloat(txtSueldo.getText()));
-            //EMPLEADO
-            p.setNombre(this.txtNombre.getText());
-            p.setApellidos(this.txtApellidos.getText());
-            if(rbtnM.isSelected())
-            p.setSexo(this.rbtnM.getText());
-            else if(rbtnF.isSelected())
-            p.setSexo(this.rbtnF.getText());
-            p.setTelefono(this.txtTelefono.getText());
-            p.setDNI(this.txtDNI.getText());
-            p.setDireccion(this.txtDireccion.getText());
-            p.setCodigoContrato(this.txtCodigo.getText());
-         
-          // p.setFechaInicio(this.dcFechaIncio.getDate().toString());
-           //p.setFechaFinal(this.dcFechaFin.getDate().toString());
-           //p.setSueldo(parseFloat(txtSueldo.getText()));         
-             //cbxCargo.getModel().setSelectedItem();
-           //p.setCargo(this.cbxCargo.getSelectedItem().toString());
-            
-            //p.setArea(this.cbxArea.getSelectedItem().toString());
-             //JOptionPane.showMessageDialog(this, "Area ingresado");
-            //p.setFechaFinal(this.dcFechaInicio.getDate()); 
-            //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-             //String date = sdf.format(jDateChooser1.getSelectedDate().getTime());
-            //jLabel1.setText(date);
-            if(proc.equals("Registrar")){
-                id = u.idNext("Empleado", "idEmpleado");
-                int x=id;
-                pr = "insert";
-                this.idint.setText(Integer.toString(x+1));
-                this.idint2.setText(Integer.toString(x));
+
+            int idEmpleado;
+            String operacion; // "insert" o "update"
+
+            // 2. Determinar operación e ID
+            if (ACCION_REGISTRAR.equals(accionBoton)) {
+                idEmpleado = u.idNext("Empleado", "idEmpleado");
+                operacion = "insert";
+
+                // Si estos campos son parte de tu lógica, se mantienen
+                this.idint.setText(Integer.toString(idEmpleado + 1));
+                this.idint2.setText(Integer.toString(idEmpleado));
                 this.txtcodigoempleado.setText(this.txtCodigo.getText());
+
+            } else if (ACCION_ACTUALIZAR.equals(accionBoton)) {
+                idEmpleado = this.idEmp;  // asumimos que idEmp ya fue seteado al seleccionar el empleado
+                operacion = "update";
+            } else {
+                // Acción desconocida: mejor salir con un mensaje claro
+                JOptionPane.showMessageDialog(
+                    this,
+                    "Acción no reconocida: " + accionBoton,
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+                );
+                return;
             }
-            if(proc.equals("Actualizar")){
-                id = this.idEmp;
-                pr = "update";
-            }
-            p.setIdEmpleado(id);
-            
-            EmpleadoDAO.procesaItem(p,pr);
-            
-            System.out.println(id);
-            ;
+
+            // 3. Construir el empleado a partir del formulario
+            Empleado empleado = construirEmpleadoDesdeFormulario(idEmpleado);
+
+            // 4. Persistir
+            EmpleadoDAO.procesaItem(empleado, operacion);
+
+            // 5. Refrescar UI
             limpiaControles();
             limpiaTabla();
             llenaTabla(false, "");
-            
-        }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         // limpiaControles();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
-    private void txtApellidosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyPressed
+    private void txtApellidoMaternoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoMaternoKeyPressed
         if(evt.getKeyCode() == evt.VK_ENTER){
             this.getFocusOwner().transferFocus();
         }
-    }//GEN-LAST:event_txtApellidosKeyPressed
+    }//GEN-LAST:event_txtApellidoMaternoKeyPressed
 
-    private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
+    private void txtApellidoMaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoMaternoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidosActionPerformed
+    }//GEN-LAST:event_txtApellidoMaternoActionPerformed
 
     private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
         if(evt.getKeyCode() == evt.VK_ENTER){
@@ -818,9 +816,39 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void txtApellidoPaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoPaternoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidoPaternoActionPerformed
+
+    private void txtApellidoPaternoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoPaternoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidoPaternoKeyPressed
+ private Empleado construirEmpleadoDesdeFormulario(int idEmpleado) {
+    Empleado empleado = new Empleado();
+
+    empleado.setIdEmpleado(idEmpleado);
+    empleado.setNombre(this.txtNombre.getText().trim());
+    empleado.setApellidoPaterno(this.txtApellidoPaterno.getText().trim());
+    empleado.setApellidoMaterno(this.txtApellidoMaterno.getText().trim());
+    empleado.setTelefono(this.txtTelefono.getText().trim());
+    empleado.setDNI(this.txtDNI.getText().trim());
+    empleado.setDireccion(this.txtDireccion.getText().trim());
+    empleado.setCodigoContrato(this.txtCodigo.getText().trim());
+
+    if (rbtnM.isSelected()) {
+        empleado.setSexo(this.rbtnM.getText());
+    } else if (rbtnF.isSelected()) {
+        empleado.setSexo(this.rbtnF.getText());
+    } else {
+        // Si quisieras, podrías manejar el caso "ningún sexo seleccionado"
+        // empleado.setSexo(null);
+    }
+
+    return empleado;
+}
  public void limpiaControles(){
         this.txtNombre.setText("");
-        this.txtApellidos.setText("");
+        this.txtApellidoMaterno.setText("");
         this.txtTelefono.setText("");
         this.txtDireccion.setText("");
         this.txtDNI.setText("");
@@ -884,6 +912,7 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -904,7 +933,8 @@ public class EmpleadoView extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton rbtnM;
     private javax.swing.ButtonGroup sexo;
     private javax.swing.JTable tblCliente;
-    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtApellidoMaterno;
+    private javax.swing.JTextField txtApellidoPaterno;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtDNI;
     private javax.swing.JTextField txtDireccion;

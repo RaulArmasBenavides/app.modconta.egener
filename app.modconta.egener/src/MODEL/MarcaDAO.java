@@ -9,7 +9,7 @@ public class MarcaDAO {
     public Vector<Marca> ListaItem(boolean sw, String str){
         Vector<Marca>item=new Vector<Marca>();
         dbBean con=new dbBean();
-        String sql="Select*from Marca ";
+        String sql="Select * from Marca ";
         if(sw==true){
             sql=sql+"where Nombre_Marca like '"+str+"%'";
         }

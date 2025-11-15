@@ -2,33 +2,53 @@
 package app.modconta.entity;
 public class Modelo {
     
-    private int IdModelo;
-    private String Nombre;
-    private String Nombre_Marca;
+ 
+    private int idModelo;
+    private String codigoModelo;  // Opcional pero útil
+    private String nombre;
 
-    public String getNombre_Marca() {
-        return Nombre_Marca;
-    }
+    private int idMarca;          // Relación correcta
+    private Marca marca;          // Opcional: objeto completo
 
-    public void setNombre_Marca(String Nombre_Marca) {
-        this.Nombre_Marca = Nombre_Marca;
-    }
-   
     public int getIdModelo() {
-        return IdModelo;
+        return idModelo;
     }
 
-    public void setIdModelo(int IdModelo) {
-        this.IdModelo = IdModelo;
+    public void setIdModelo(int idModelo) {
+        this.idModelo = idModelo;
+    }
+
+    public String getCodigoModelo() {
+        return codigoModelo;
+    }
+
+    public void setCodigoModelo(String codigoModelo) {
+        this.codigoModelo = codigoModelo;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-    
+
+    public int getIdMarca() {
+        return idMarca;
+    }
+
+    public void setIdMarca(int idMarca) {
+        this.idMarca = idMarca;
+    }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
+
     
 }

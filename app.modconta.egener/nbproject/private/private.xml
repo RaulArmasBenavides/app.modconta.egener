@@ -3,7 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/entity/Modelo.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/view/test.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/entity/Marca.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/dataaccess/MovimientosDo.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/view/EmpleadoView.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/MODEL/ServicioDAO.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/MODEL/MarcaDAO.java</file>
             <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/databaase/dbBean.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/entity/Constantes.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/business/Negocios.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/MODEL/EquipoDAO.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/MODEL/detvenDAO.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/MODEL/detserDAO.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/MODEL/ModeloDAO.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/MODEL/EmpleadoDAO.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/MODEL/AdministradorDAO.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/MODEL/ClienteDAO.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/MODEL/VentaDAO.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/entity/Cotizacion.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/view/EquipoView.java</file>
+            <file>file:/D:/dev/Java/desktop/app.modconta.egener/app.modconta.egener/src/app/modconta/entity/Equipo.java</file>
         </group>
     </open-files>
 </project-private>

@@ -44,10 +44,10 @@ public class EquipoView extends javax.swing.JInternalFrame {
         for(int j = 0; j<i;j++){
           Vector vect = new Vector();
           vect.addElement(equip.get(j).getIdEquipo());
-          vect.addElement(equip.get(j).getNombre_equipo());
-          vect.addElement(equip.get(j).getSO());
+          vect.addElement(equip.get(j).getNombreEquipo());
+          vect.addElement(equip.get(j).getSistemaOperativo());
           vect.addElement(equip.get(j).getProcesador());
-          vect.addElement(equip.get(j).getRAM());
+          vect.addElement(equip.get(j).getRam());
           vect.addElement(equip.get(j).getTarjetaMadre());
           vect.addElement(equip.get(j).getStock());
           vect.addElement(equip.get(j).getStockMax());
@@ -688,7 +688,7 @@ public void limpiaControles(){
             //this.spincant.getValue().toString()
               util u = new util();
               Equipo eq = new Equipo();
-              eq.setNombre_equipo(this.txtNombreEquip.getText());
+              eq.setNombreEquipo(this.txtNombreEquip.getText());
               JOptionPane.showMessageDialog(this, "ya esta nombre" );
               System.out.println(this.comboMarca.getSelectedItem().toString());
               //eq.marc.setNombre(this.comboMarca.getSelectedItem().toString());
@@ -696,11 +696,11 @@ public void limpiaControles(){
              // JOptionPane.showMessageDialog(this, "ya esta marca" );
              // eq.setMode(this.comboModelo.getSelectedItem().toString());
              // JOptionPane.showMessageDialog(this, "ya esta modelo" );
-              eq.setSO(this.txtSO.getText());
+              eq.setSistemaOperativo(this.txtSO.getText());
               JOptionPane.showMessageDialog(this, "ya esta so" );
               eq.setProcesador(this.txtProcesador.getText());
               JOptionPane.showMessageDialog(this, "ok" );
-              eq.setRAM(this.cbRAM.getSelectedItem().toString());
+              eq.setRam(this.cbRAM.getSelectedItem().toString());
               JOptionPane.showMessageDialog(this, "ok" );
               eq.setTarjetaMadre(this.txtTM.getText()); 
               eq.setStock(Integer.parseInt(this.spinstock.getValue().toString()));

@@ -2,34 +2,29 @@
 package app.modconta.entity;
 
 public class Equipo 
-
 {
     private int idEquipo;
-    private String Nombre_equipo;
-    private String SO;
-    private String Procesador; 
-    private String RAM;
-    private String TarjetaMadre;
-    private int Stock;
-    private int StockMax;
-    private int StockMin;
-    private int idModelo;
-  // public Marca marc;
-   // public Modelo mode;
+    private String nombreEquipo;
+    private String sistemaOperativo;
+    private String procesador;
+    private String ram;
+    private String tarjetaMadre;
 
+    private int stock;
+    private int stockMax;
+    private int stockMin;
+    private int idModelo;        // Relación correcta
+    private Modelo modelo;       // Opcional
     public Equipo() {
     }
 
-    public Equipo(int idEquipo, String Nombre_equipo, String SO, String Procesador, String RAM, String TarjetaMadre, int Stock, int StockMax, int StockMin, int idModelo) {
-        this.idEquipo = idEquipo;
-        this.Nombre_equipo = Nombre_equipo;
-        this.SO = SO;
-        this.Procesador = Procesador;
-        this.RAM = RAM;
-        this.TarjetaMadre = TarjetaMadre;
-        this.Stock = Stock;
-        this.StockMax = StockMax;
-        this.StockMin = StockMin;
+     
+
+    public int getIdModelo() {
+        return idModelo;
+    }
+
+    public void setIdModelo(int idModelo) {
         this.idModelo = idModelo;
     }
 
@@ -41,76 +36,76 @@ public class Equipo
         this.idEquipo = idEquipo;
     }
 
-    public String getNombre_equipo() {
-        return Nombre_equipo;
+    public String getNombreEquipo() {
+        return nombreEquipo;
     }
 
-    public void setNombre_equipo(String Nombre_equipo) {
-        this.Nombre_equipo = Nombre_equipo;
+    public void setNombreEquipo(String nombreEquipo) {
+        this.nombreEquipo = nombreEquipo;
     }
 
-    public String getSO() {
-        return SO;
+    public String getSistemaOperativo() {
+        return sistemaOperativo;
     }
 
-    public void setSO(String SO) {
-        this.SO = SO;
+    public void setSistemaOperativo(String sistemaOperativo) {
+        this.sistemaOperativo = sistemaOperativo;
     }
 
     public String getProcesador() {
-        return Procesador;
+        return procesador;
     }
 
-    public void setProcesador(String Procesador) {
-        this.Procesador = Procesador;
+    public void setProcesador(String procesador) {
+        this.procesador = procesador;
     }
 
-    public String getRAM() {
-        return RAM;
+    public String getRam() {
+        return ram;
     }
 
-    public void setRAM(String RAM) {
-        this.RAM = RAM;
+    public void setRam(String ram) {
+        this.ram = ram;
     }
 
     public String getTarjetaMadre() {
-        return TarjetaMadre;
+        return tarjetaMadre;
     }
 
-    public void setTarjetaMadre(String TarjetaMadre) {
-        this.TarjetaMadre = TarjetaMadre;
+    public void setTarjetaMadre(String tarjetaMadre) {
+        this.tarjetaMadre = tarjetaMadre;
     }
 
     public int getStock() {
-        return Stock;
+        return stock;
     }
 
-    public void setStock(int Stock) {
-        this.Stock = Stock;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     public int getStockMax() {
-        return StockMax;
+        return stockMax;
     }
 
-    public void setStockMax(int StockMax) {
-        this.StockMax = StockMax;
+    public void setStockMax(int stockMax) {
+        this.stockMax = stockMax;
     }
 
     public int getStockMin() {
-        return StockMin;
+        return stockMin;
     }
 
-    public void setStockMin(int StockMin) {
-        this.StockMin = StockMin;
+    public void setStockMin(int stockMin) {
+        this.stockMin = stockMin;
     }
 
-    public int getIdModelo() {
-        return idModelo;
+    public Modelo getModelo() {
+        return modelo;
     }
 
-    public void setIdModelo(int idModelo) {
-        this.idModelo = idModelo;
+    public void setModelo(Modelo modelo) {
+        this.modelo = modelo;
     }
 
     

@@ -20,7 +20,7 @@ public class ModeloDAO {
                 Modelo mod=new Modelo();
                 mod.setIdModelo(resultado.getInt(1));
                 mod.setNombre(resultado.getString(2));
-                mod.setNombre_Marca(resultado.getString(3));
+                //mod.setNombre_Marca(resultado.getString(3));
                 item.addElement(mod);
             }
         } catch (java.sql.SQLException e) {
@@ -38,10 +38,10 @@ public class ModeloDAO {
         String sql="";
         dbBean con=new dbBean();
         if (proc.equals("insert")) {
-            sql="insert into Modelo values("+p.getIdModelo()+", '"+p.getNombre()+"', '"+p.getNombre_Marca()+"')";
+            sql="insert into Modelo values("+p.getIdModelo()+", '"+p.getNombre()+"', '"+p.getIdMarca()+"')";
         }
         if(proc.equals("update")){
-            sql=" update Modelo set Nombre_Modelo = '"+p.getNombre()+"',Nombre_Marca='"+p.getNombre_Marca()+" where id_personal="+p.getIdModelo();
+            sql=" update Modelo set Nombre_Modelo = '"+p.getNombre()+"',Nombre_Marca='"+p.getIdMarca()+" where id_personal="+p.getIdModelo();
         }
         
         try {

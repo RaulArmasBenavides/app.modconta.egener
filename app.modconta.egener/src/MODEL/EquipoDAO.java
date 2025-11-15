@@ -1,6 +1,8 @@
 package MODEL;
 import app.modconta.databaase.dbBean;
 import app.modconta.entity.Equipo;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -24,10 +26,10 @@ public class EquipoDAO {
                 Equipo e; 
                 e = new Equipo();
                 e.setIdEquipo(resultado.getInt(1));
-                e.setNombre_equipo(resultado.getString(2));
+                e.setNombreEquipo(resultado.getString(2));
                 e.setProcesador(resultado.getString(3));
-                e.setRAM(resultado.getString(4));
-                e.setSO(resultado.getString(5));
+                e.setRam(resultado.getString(4));
+                e.setSistemaOperativo(resultado.getString(5));
                 e.setTarjetaMadre(resultado.getString(6));
                 e.setStock(resultado.getInt(7));
                 e.setStockMax(resultado.getInt(8));
@@ -77,39 +79,86 @@ public int FindID(String s )
  
  }
     
-    
-//funcion procesar 
-public int procesaItem(Equipo p, String proc){
-        int resultado = 0;
-        String sql = "";
-        String x1= "null";
-        String x2 = "null";
-        dbBean con = new dbBean();
-        if(proc.equals("insert")){
-       //insertar
-       System.out.println("que fue ");
-        //sql = "insert into Equipo values ('"+ p.getIdEquipo()+"', '"+p.getNombre_equipo()+"', '"+ p.marc.getNombre()+"', '"+  p.mode.getNombre()+"', '"+ p.getSO() +"', '"+ p.getProcesador() +"', '"+p.getRAM()+"', '"+p.getTarjetaMadre()+"')";
-        sql = "insert into Equipo values ('"+ p.getIdEquipo()+"', '"+p.getNombre_equipo()+"', '"+ p.getSO() +"', '"+ p.getProcesador() +"', '"+p.getRAM()+"', '"+p.getTarjetaMadre()+"',"+ p.getStock()+","+ p.getStockMax()+"," +p.getStockMin()+","+p.getIdModelo()+")";
-       // sql = "insert into Equipo values ('"+ p.getIdEquipo()+"', '"+ p.getMarc()+"', '"+  p.getMode()+"', '"+ p.getSO() +"', '"+ p.getProcesador() +"', '"+p.getRAM()+"', '"+p.getTarjetaMadre() +"')"; 
-       }
-        if(proc.equals("update")){ 
-            //actualizar 
-            //el criterio de busqueda , se basa en ingresar el código de CLiente
-            sql = "update Cliente set Nombre = '"+ p.getNombre_equipo()+"', SO = '"+ p.getSO()+"', Procesador = '"+ p.getProcesador()+"',RAM='"+p.getRAM()+"', TarjetaMadre = '"+ p.getTarjetaMadre()+"' where idEquipo = '"+ p.getIdEquipo()+"'";
+     public int procesaItem(Equipo p, String proc) {
+    int resultado = 0;
+    dbBean db = new dbBean();
+    Connection cn = null;
+    PreparedStatement ps = null;
+
+    // Ajusta los nombres de columnas si en tu BD son distintos
+    String sqlInsert = "INSERT INTO Equipo " +
+            "(IdEquipo, Nombre_equipo, SO, Procesador, RAM, TarjetaMadre, Stock, StockMax, StockMin, IdModelo) " +
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    String sqlUpdate = "UPDATE Equipo SET " +
+            "Nombre_equipo = ?, " +
+            "SO            = ?, " +
+            "Procesador    = ?, " +
+            "RAM           = ?, " +
+            "TarjetaMadre  = ?, " +
+            "Stock         = ?, " +
+            "StockMax      = ?, " +
+            "StockMin      = ?, " +
+            "IdModelo      = ? " +
+            "WHERE IdEquipo = ?";
+
+    try {
+        cn = db.getConnection();
+
+        if ("insert".equalsIgnoreCase(proc)) {
+
+            ps = cn.prepareStatement(sqlInsert);
+
+            ps.setInt(1,  p.getIdEquipo());
+            ps.setString(2, p.getNombreEquipo());
+            ps.setString(3, p.getSistemaOperativo());
+            ps.setString(4, p.getProcesador());
+            ps.setString(5, p.getRam());
+            ps.setString(6, p.getTarjetaMadre());
+            ps.setInt(7,  p.getStock());
+            ps.setInt(8,  p.getStockMax());
+            ps.setInt(9,  p.getStockMin());
+            ps.setInt(10, p.getIdModelo());
+
+        } else if ("update".equalsIgnoreCase(proc)) {
+
+            ps = cn.prepareStatement(sqlUpdate);
+
+            ps.setString(1, p.getNombreEquipo());
+            ps.setString(2, p.getSistemaOperativo());
+            ps.setString(3, p.getProcesador());
+            ps.setString(4, p.getRam());
+            ps.setString(5, p.getTarjetaMadre());
+            ps.setInt(6,  p.getStock());
+            ps.setInt(7,  p.getStockMax());
+            ps.setInt(8,  p.getStockMin());
+            ps.setInt(9,  p.getIdModelo());
+            ps.setInt(10, p.getIdEquipo()); // WHERE
+
+        } else {
+            System.out.println("Operación no reconocida en procesaItem(Equipo): " + proc);
+            return 0;
         }
-        try{
-            resultado = con.updateSQL(sql);
-        }catch(java.sql.SQLException e){
+
+        resultado = ps.executeUpdate();
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (ps != null) ps.close();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-        try{
-            con.close();
-        }catch(java.sql.SQLException e){
+        try {
+            db.close();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-        return resultado;       
-    }    
-    
+    }
+
+    return resultado;
+}
  
 
 public int FindIDEquipo(String s ) 

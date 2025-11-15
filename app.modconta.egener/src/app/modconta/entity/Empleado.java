@@ -6,9 +6,26 @@ public class Empleado {
      
     private int IdEmpleado;
     private String Nombre;
-    private String Apellidos;
+    private String ApellidoPaterno;
+    private String ApellidoMaterno;
     private String Direccion;
     private String Telefono;
+
+    public String getApellidoPaterno() {
+        return ApellidoPaterno;
+    }
+
+    public void setApellidoPaterno(String ApellidoPaterno) {
+        this.ApellidoPaterno = ApellidoPaterno;
+    }
+
+    public String getApellidoMaterno() {
+        return ApellidoMaterno;
+    }
+
+    public void setApellidoMaterno(String ApellidoMaterno) {
+        this.ApellidoMaterno = ApellidoMaterno;
+    }
     private String DNI;
     private String Sexo; 
     private String CodigoContrato;
@@ -55,13 +72,7 @@ public class Empleado {
         this.Nombre = Nombre;
     }
 
-    public String getApellidos() {
-        return Apellidos;
-    }
-
-    public void setApellidos(String Apellidos) {
-        this.Apellidos = Apellidos;
-    }
+ 
 
     public String getTelefono() {
         return Telefono;

@@ -21,7 +21,7 @@ public class db {
         Connection cn = null;
         try {
          Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-         cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=dblogistica",Constantes.user_sa,Constantes.clave_sa);
+         cn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=bdgeneric",Constantes.user_sa,Constantes.clave_sa);
         } catch (SQLException | ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
             System.out.println(ex);
         }
